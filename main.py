@@ -27,30 +27,45 @@ def set_background(png_file):
 
 
 
-
-
-
 # Variables
 smackdown_start = datetime.datetime(year=2023,day=13,month=5, hour=10, minute=0)
 
 
-#Page
-set_background('images/silkeborg.jpg')
+# Styles
 st.markdown(
     """
     <style>
     .time {
-        font-size: 130px !important;
-        font-weight: 700 !important;
-        color: #ec5953 !important;
+        font-size: 130px;
+        font-weight: 700;
+        color: #ec5953;
         text-align: center;
     }
+    .title {
+        font-size: 130px;
+        font-weight: 700;
+        color: #ec5953;
+        text-align: center;
+    }
+    .css-18ni7ap {
+        visibility: hidden;
+    }
     </style>
-    
     """,
     unsafe_allow_html=True
 )
 
+#Page
+set_background('images/silkeborg.jpg')
+
+st.markdown(
+            f"""
+            <p class="title">
+                SMACKDOWN COUNTDOWN
+            </p>
+            """, unsafe_allow_html=True)
+
+# Countdown Timer
 async def watch(test):
     while True:
         time_left_till_smackdown = smackdown_start-datetime.datetime.now()
@@ -68,9 +83,7 @@ async def watch(test):
         r = await asyncio.sleep(0.2)
 
 test = st.empty()
-
-
-
-
 asyncio.run(watch(test))
+
+
 
