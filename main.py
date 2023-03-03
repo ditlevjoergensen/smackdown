@@ -83,6 +83,15 @@ async def watch(test):
         r = await asyncio.sleep(0.2)
 
 test = st.empty()
+
+st.markdown(
+            f"""
+            <p class="title">
+                EXTREME SURVIVAL EDITION
+            </p>
+            """, unsafe_allow_html=True)
+
+
 asyncio.run(watch(test))
 
 
