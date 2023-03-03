@@ -1,0 +1,5 @@
+# place needed libraries here
+# python -m venv .venv
+
+streamlit
+pandas
