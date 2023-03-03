@@ -34,6 +34,11 @@ smackdown_start = datetime.datetime(year=2023,day=13,month=5, hour=10, minute=0)
 # Styles
 st.markdown(
     """
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = yes" />
+    </head>
     <style>
     .time {
         font-size: 130px;
