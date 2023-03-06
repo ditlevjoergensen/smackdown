@@ -20,22 +20,6 @@ dict = {"Tid": ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "
 
 df = pd.DataFrame.from_dict(dict,orient='columns')
 
-# CSS to inject contained in a string
-hide_table_row_index = """
-            <style>
-            thead tr th:first-child {display:none}
-            tbody th {display:none}
-            </style>
-            """
-
-# Inject CSS with Markdown
-st.markdown(hide_table_row_index, unsafe_allow_html=True)
-
-st.markdown(
-            f"""
-            <p class="title">
-                ACTIVITIES
-            </p>
-            """, unsafe_allow_html=True)
+st.title("ACTIVITIES")
 
 st.table(df)

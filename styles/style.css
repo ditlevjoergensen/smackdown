@@ -11,6 +11,9 @@
     color: #ec5953;
     text-align: center;
 }
-.css-18ni7ap {
-    visibility: hidden;
+.css-10trblm{
+    text-align: center;
 }
+#MainMenu {visibility: hidden;}
+thead tr th:first-child {display:none}
+tbody th {display:none}

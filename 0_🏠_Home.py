@@ -41,21 +41,10 @@ with open(css_file) as f:
 #Page
 set_background(background)
 
-st.markdown(
-            f"""
-            <p class="title">
-                SMACKDOWN 2023
-            </p>
-            """, unsafe_allow_html=True)
-
-
-
-st.markdown(
-            f"""
-            <p class="title">
-                SURVIVAL EDITION
-            </p>
-            """, unsafe_allow_html=True)
+st.title("SMACKDOWN")
+st.title("2023")
+st.title("SURVIVAL")
+st.title("EDITION")
 
 
 
