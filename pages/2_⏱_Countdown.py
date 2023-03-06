@@ -1,10 +1,12 @@
 import streamlit as st
-import datetime
 import asyncio
+import datetime
+from pathlib import Path
 import base64
 
-# Lørdag 13 maj kl 10:00
-st.set_page_config(page_title="Smackdown", layout="wide")
+#Variables
+smackdown_start = datetime.datetime(year=2023,day=13,month=5, hour=10, minute=0)
+st.set_page_config(page_title="Smackdown", page_icon="🍺")
 
 # Helper Functions
 def get_base64(bin_file):
@@ -17,59 +19,36 @@ def set_background(png_file):
     page_bg_img = '''
     <style>
     .stApp {
-    background-image: url("data:image/png;base64,%s");
-    background-size: cover;
+        background-image: url("data:image/png;base64,%s");
+        background-size: cover;
     }
     </style>
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
+# Paths
+#current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
+css_file = Path.cwd() / "styles" / "style.css"
+background = Path.cwd() / "images" / "silkeborg.jpg"
 
 
 # Variables
-smackdown_start = datetime.datetime(year=2023,day=13,month=5, hour=10, minute=0)
 
 
 # Styles
-st.markdown(
-    """
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta http-equiv="Content-Style-Type" content="text/css">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = yes" />
-    </head>
-    <style>
-    .time {
-        font-size: 130px;
-        font-weight: 700;
-        color: #ec5953;
-        text-align: center;
-    }
-    .title {
-        font-size: 130px;
-        font-weight: 700;
-        color: #ec5953;
-        text-align: center;
-    }
-    .css-18ni7ap {
-        visibility: hidden;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-#Page
-set_background('images/silkeborg.jpg')
+with open(css_file) as f:
+    st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
 st.markdown(
             f"""
             <p class="title">
-                SMACKDOWN COUNTDOWN
+                COUNTDOWN
             </p>
             """, unsafe_allow_html=True)
 
+#Page
+set_background(background)
 # Countdown Timer
 async def watch(test):
     while True:
@@ -89,15 +68,4 @@ async def watch(test):
 
 test = st.empty()
 
-st.markdown(
-            f"""
-            <p class="title">
-                EXTREME SURVIVAL EDITION
-            </p>
-            """, unsafe_allow_html=True)
-
-
 asyncio.run(watch(test))
-
-
-
