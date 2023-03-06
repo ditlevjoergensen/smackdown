@@ -40,12 +40,7 @@ background = Path.cwd() / "images" / "silkeborg.jpg"
 with open(css_file) as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
-st.markdown(
-            f"""
-            <p class="title">
-                COUNTDOWN
-            </p>
-            """, unsafe_allow_html=True)
+st.title("COUNTDOWN")
 
 #Page
 set_background(background)

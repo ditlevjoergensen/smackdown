@@ -1,18 +1,13 @@
 
 .time {
-    font-size: 100px;
-    font-weight: 700;
-    color: #ec5953;
-    text-align: center;
-}
-.title {
-    font-size: 100px;
+    font-size: 50px;
     font-weight: 700;
     color: #ec5953;
     text-align: center;
 }
 .css-10trblm{
     text-align: center;
+    color: #ec5953;
 }
 #MainMenu {visibility: hidden;}
 thead tr th:first-child {display:none}
