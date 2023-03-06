@@ -5,7 +5,7 @@ from pathlib import Path
 import base64
 
 #Variables
-smackdown_start = datetime.datetime(year=2023,day=13,month=5, hour=10, minute=0)
+smackdown_start = datetime.datetime(year=2023,day=13,month=5, hour=9, minute=0)
 st.set_page_config(page_title="Smackdown", page_icon="🍺")
 
 # Helper Functions
