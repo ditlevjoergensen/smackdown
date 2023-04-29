@@ -1,6 +1,11 @@
 import streamlit as st
 import base64
 from pathlib import Path
+import streamlit as st
+import asyncio
+import datetime
+from pathlib import Path
+import base64
 
 # Lørdag 13 maj kl 10:00
 st.set_page_config(page_title="Smackdown", page_icon="🍺")
@@ -30,8 +35,8 @@ css_file = current_dir / "styles" / "style.css"
 background = current_dir / "images" / "silkeborg.jpg"
 
 
-# Variables
-
+#Variables
+smackdown_start = datetime.datetime(year=2023,day=13,month=5, hour=9, minute=0)
 
 # Styles
 with open(css_file) as f:
@@ -45,6 +50,31 @@ st.title("SMACKDOWN")
 st.title("2023")
 st.title("SURVIVAL")
 st.title("EDITION")
+
+
+st.title("")
+st.title("")
+st.title("COUNTDOWN")
+# Countdown Timer
+async def watch(test):
+    while True:
+        time_left_till_smackdown = smackdown_start-datetime.datetime.now()
+        s = time_left_till_smackdown // datetime.timedelta(seconds=1)
+        days, remainder_hours = divmod(s, 3600*24)
+        hours, remainder = divmod(remainder_hours, 3600)
+        minutes, seconds = divmod(remainder, 60)
+
+        test.markdown(
+            f"""
+            <p class="time">
+                {'{:02}:{:02}:{:02}:{:02}'.format(int(days), int(hours), int(minutes), int(seconds))}
+            </p>
+            """, unsafe_allow_html=True)
+        r = await asyncio.sleep(0.2)
+
+test = st.empty()
+
+asyncio.run(watch(test))
 
 
 

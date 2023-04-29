@@ -32,14 +32,24 @@ with open(css_file) as f:
 
 dict = {"Tid": ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"
                 , "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"], 
-        "Activity": ["Åbningscermoni Tusindfryd 141", "Transport til Kano","Kano","Frokost","Alex Optagelse","Kano","Kano",
+        "Aktivitet": ["Åbningscermoni Tusindfryd 141", "Transport til Kano","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse",
                      "Aftensmad på Tusindfryd 141","Aftensmad på Tusindfryd 141","Aftensmad på Tusindfryd 141",
-                     "Bowl & Fun","Bowl & Fun","Bodega Fun","Bodega Fun","Tak for i dag"]}
+                     "Bowl & Fun","Bowl & Fun","Bodega","Bodega","Tak for i dag"],
+        "Aktivitet2": ["Åbningscermoni Tusindfryd 141", "Transport til Kano","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse",
+                     "Aftensmad på Tusindfryd 141","Aftensmad på Tusindfryd 141","Aftensmad på Tusindfryd 141",
+                     "Bowl & Fun","Bowl & Fun","Bodega","Bodega","Tak for i dag"]}
 
-df = pd.DataFrame.from_dict(dict,orient='columns')
 
 st.title("Aktiviteter")
-st.table(df.style.apply(color_coding, axis=1))
+
+df = pd.DataFrame(dict)
+df.set_index('Aktivitet', inplace=True)
+
+
+st.table(df)
+
+
+ #.style.apply(color_coding, axis=1)
 #st.table(df)
 
 st.title("Pakkeliste")
