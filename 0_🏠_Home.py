@@ -36,7 +36,7 @@ background = current_dir / "images" / "silkeborg.jpg"
 
 
 #Variables
-smackdown_start = datetime.datetime(year=2023,day=13,month=5, hour=7, minute=0)
+smackdown_start = datetime.datetime(year=2023,day=13,month=5, hour=8, minute=0)
 
 # Styles
 with open(css_file) as f:
