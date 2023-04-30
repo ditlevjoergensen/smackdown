@@ -30,20 +30,26 @@ def color_coding(row):
 with open(css_file) as f:
     st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
+st.title("Pakkeliste")
+
+dict = {"Pakkeliste": ["Badetøj", "Håndklæde","Sovepose/Dyne","Lagen","Udendørs tøj til kano","Udendørs sko til kano"]}
+
+df = pd.DataFrame.from_dict(dict,orient='columns')
+
+st.table(df)
+
+
+
 dict = {"Tid": ["10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"
                 , "19:00", "20:00", "21:00", "22:00", "23:00", "24:00"], 
         "Aktivitet": ["Åbningscermoni Tusindfryd 141", "Transport til Kano","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse",
                      "Aftensmad på Tusindfryd 141","Aftensmad på Tusindfryd 141","Aftensmad på Tusindfryd 141",
-                     "Bowl & Fun","Bowl & Fun","Bodega","Bodega","Tak for i dag"],
-        "Aktivitet2": ["Åbningscermoni Tusindfryd 141", "Transport til Kano","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse","Kano, Frokost og Alex Optagelse",
-                     "Aftensmad på Tusindfryd 141","Aftensmad på Tusindfryd 141","Aftensmad på Tusindfryd 141",
                      "Bowl & Fun","Bowl & Fun","Bodega","Bodega","Tak for i dag"]}
 
 
-st.title("Aktiviteter")
+st.title("Aktiviteter Lørdag")
 
 df = pd.DataFrame(dict)
-df.set_index('Aktivitet', inplace=True)
 
 
 st.table(df)
@@ -52,10 +58,14 @@ st.table(df)
  #.style.apply(color_coding, axis=1)
 #st.table(df)
 
-st.title("Pakkeliste")
 
-dict = {"Pakkeliste": ["Badetøj", "Håndklæde","Sovepose/Dyne","Lagen","Udendørs tøj til kano","Udendørs sko til kano"]}
+dict = {"Tid": ["08:00", "09:00", "10:00", "11:00", ], 
+        "Aktivitet": ["Morgenandagt, Afslutning og på gensyn", "Morgenandagt, Afslutning og på gensyn","Morgenandagt, Afslutning og på gensyn","Morgenandagt, Afslutning og på gensyn"]}
 
-df = pd.DataFrame.from_dict(dict,orient='columns')
+
+st.title("Aktiviteter Søndag")
+
+df = pd.DataFrame(dict)
+
 
 st.table(df)
