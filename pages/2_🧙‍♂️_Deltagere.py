@@ -21,7 +21,7 @@ mj_alexander_image_file = current_dir.parent / "images" / "mj_alexander.jpg"
 mj_andreas_image_file = current_dir.parent / "images" / "mj_andreas.jpg"
 mj_ditlev_image_file = current_dir.parent / "images" / "mj_ditlev.jpg"
 mj_jonas_image_file = current_dir.parent / "images" / "mj_jonas.jpg"
-mj_rene_image_file = current_dir.parent / "images" / "mj_rene2.jpg"
+mj_rene_image_file = current_dir.parent / "images" / "mj_Rene2.jpg"
 
 mj_alexander_image = Image.open(mj_alexander_image_file)
 mj_andreas_image = Image.open(mj_andreas_image_file)
